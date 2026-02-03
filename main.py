@@ -27,7 +27,7 @@ def gerar_email(username):
     return f"{username}@{dominio}"
 
 def gerar_senha(tamanho=12):
-    caracteres = string.ascii_letters + string.digits = "!@#$%¨&*"
+    caracteres = string.ascii_letters + string.digits + "!@#$%¨&*"
     senha = ""
 
     for _ in range(tamanho):
@@ -35,19 +35,18 @@ def gerar_senha(tamanho=12):
     return senha
 
 def gerar_identidade():
-    nome = gerar_nome_completo
+    nome = gerar_nome_completo()
     username = gerar_username(nome)
     email = gerar_email(username)
     senha = gerar_senha()
 
-    print("\n Identidade Fictícia Gerada:")
+    print("Identidade Fictícia Gerada:")
     print("-------------------------------")
     print(f"Nome: {nome}")
     print(f"Username: {username}")
     print(f"Email: {email}")
     print(f"Senha: {senha}")
-    print("-------------------------------\n")
-    print("Identidade gerada com sucesso!")
+    print("-------------------------------")
 
 if __name__ == "__main__":
     gerar_identidade()
